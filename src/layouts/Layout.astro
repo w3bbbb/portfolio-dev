@@ -16,6 +16,27 @@ import Footer from "../components/Footer.astro";
   </head>
 
   <body class="relative text-black dark:text-white">
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <!-- Light/dark gradient blobs -->
+      <div
+        class="absolute w-[40rem] h-[40rem] top-[-10rem] left-[-10rem] rounded-full
+    bg-orange-400/30 dark:bg-orange-500/20 blur-3xl animate-pulse-slow"
+      >
+      </div>
+
+      <div
+        class="absolute w-[30rem] h-[30rem] bottom-[-5rem] right-[-5rem] rounded-full
+    bg-[#e0e7ff]/40 dark:bg-[#6366f1]/10 blur-3xl animate-pulse-slow"
+      >
+      </div>
+
+      <!-- Subtle radial center glow -->
+      <div
+        class="absolute inset-0 bg-gradient-radial from-white/40 via-transparent to-transparent dark:from-[#1e1b4b]/20"
+      >
+      </div>
+    </div>
+
     <Header />
     <slot />
     <Footer />
