@@ -1,0 +1,57 @@
+---
+import NextJsIcon from "../icons/NextJs.astro"
+import TailwindIcon from "../icons/Tailwind.astro"
+import ReactIcon from "../icons/React.astro"
+
+const TAGS = {
+  Next: {
+    name: "NextJs",
+    class: "bg-black text-white",
+    icon: NextJsIcon,
+  },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: TailwindIcon,
+  },
+  React: {
+    name: "React",
+    class: "bg-white text-[#58c4dc]",
+    icon: ReactIcon,
+  }
+} 
+
+const PROJECTS = [
+  {
+    title: "SVGL - A beautiful library with SVG logos",
+    description:
+      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands.",
+    link: "https://github.com/pheralb/svgl",
+    image: '/projects/svgl.webp',
+    tags: [TAGS.Next, TAGS.Tailwind, TAGS.React], 
+  },
+]
+
+---
+
+{
+  PROJECTS.map(({image, title, description, tags}) => (
+    <article>
+      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex flex-row gap-x-4">
+        {
+          tags.map(tag => (
+            <li>
+              <span class={`${tag.class} flex items-center gap-x-2 rounded-full text-xs py-1 px-2`}>
+                <tag.icon class="size-6"/>
+                {tag.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+      <img src={image} alt="project image" class="rounded shadow-2xl shadow-white/10">
+    </article>
+  ))
+}
