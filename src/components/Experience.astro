@@ -4,35 +4,38 @@ import ExperienceItem from "./ExperienceItem.astro";
 const EXPERIENCE = [
   {
     date: "April 2024 – May 2025",
-    title: "Software Engineer at MavDigital (via Hermosa Software)",
+    title: "Software Engineer",
     description:
       "Enhanced and maintained the Portal-Mav web application, automating invoice issuance for hundreds of companies through integration with the national tax system. Led DevOps practices including CI/CD, automated testing, and Dockerized environments on AWS.",
     link: "",  
+    company: "Hermosa Software",
   },
   {
     date: "August 2023 – March 2024",
-    title: "Frontend Engineer at Hermosa Software (II Internal Project)",
+    title: "Frontend Engineer (II Internal Project)",
     description:
       "Led the development of a scalable event logistics and ticketing platform. Implemented support for multiple users, device drivers, and QR code scanning for secure validation. Oversaw the complete development lifecycle.",
     link: "", 
+    company: "Hermosa Software",
   },
   {
     date: "February 2023 – July 2023",
-    title: "Frontend Engineer at Hermosa Software (I Internal Project)",
+    title: "Frontend Engineer (I Internal Project)",
     description:
       "Built and maintained features for a SaaS application in the construction supply sector. Worked on dynamic and multistep forms, dashboards, and integrated third-party APIs and payment gateways.",
     link: "", 
+    company: "Hermosa Software",
   },
 ];
 ---
 
-<ol class="relative border-s ml-3 border-black dark:border-white/50">  
+<ol class="relative mt-16">
   {
-    EXPERIENCE.map(experience => (
-      <li class="mb-10 ms-4">
+    EXPERIENCE.map((experience) => (
+      <li class="">
         <ExperienceItem {...experience} />
       </li>
     ))
-  }                
+  }
 </ol>
 
