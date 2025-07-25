@@ -1,14 +1,47 @@
-<header class="flex justify-between items-center py-5 w-full xl:w-[1120px] mx-auto">
-  <img 
-    src="/src/assets/avatar.jpg" 
-    alt="photo" 
-    class="rounded-full size-12"
-  />
-  <nav class="flex flex-row gap-x-10 opacity-90">
-    <a href="#top">Home</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const navItems = [
+  {
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+  {
+    title: "About",
+    label: "about",
+    url: "/#about",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "mailto:chrissww9@gmail.com",
+  },
+];
+---
+
+<header class="fixed top-4 z-50 w-full flex justify-center">
+  <nav
+    class="flex gap-2 px-3 py-2 backdrop-blur-md bg-white/30 dark:bg-black/20 border border-white/30 dark:border-white/10
+    rounded-full shadow-lg transition-all duration-300 text-sm font-medium text-gray-800 dark:text-gray-100"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          href={link.url}
+          aria-label={link.label}
+          class="relative px-4 py-2 rounded-full transition text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 hover:bg-white/50 dark:hover:bg-white/10"
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    {/* <ThemeToggle /> */}
   </nav>
 </header>
+
