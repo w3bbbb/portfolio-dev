@@ -4,6 +4,11 @@ import TailwindIcon from "../icons/Tailwind.astro";
 import ReactIcon from "../icons/React.astro";
 import GitHubIcon from "../icons/Github.astro";
 import LinkIcon from "../icons/Link.astro";
+import ReactRouter from "../icons/ReactRouter.astro";
+import Redux from "../icons/Redux.astro";
+import Typescript from "../icons/Typescript.astro";
+import OpenAi from "../icons/OpenAi.astro";
+import Gsap from "../icons/Gsap.astro";
 
 import LinkButton from "./LinkButton.astro";
 
@@ -23,26 +28,59 @@ const TAGS = {
     class: "bg-white border border-black/30 dark:border-none text-[#58c4dc]",
     icon: ReactIcon,
   },
+  ReactRouter: {
+    name: "React Router v7",
+    class: "bg-white border border-black/30 dark:border-none text-[#ff0000]",
+    icon: ReactRouter,
+  },
+  Redux: {
+    name: "Redux",
+    class: "bg-white border border-black/30 dark:border-none text-[#671FA6]",
+    icon: Redux,
+  },
+  Typescript: {
+    name: "Typescript",
+    class: "bg-white border border-black/30 dark:border-none text-[#2A539D]",
+    icon: Typescript,
+  },
+  OpenAi: {
+    name: "OpenAi",
+    class: "bg-black border border-black dark:border-none text-white",
+    icon: OpenAi,
+  },
+  Gsap: {
+    name: "GSAP",
+    class: "bg-gradient-to-r from-[#5DD332] to-[#8DEA6A] border border-black dark:border-none text-black font-bold",
+    icon: Gsap,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Streamly - A modern video-sharing platform",
+    title: "CR Compras Landing Page",
     description:
-      "A video-sharing web app inspired by platforms like YouTube. Users can upload, watch, and like videos. Includes search, categories, and responsive UI. Built with Next.js, React, and Tailwind CSS.",
-    link: "https://youtube.com", // replace with your real link
-    github: "https://github.com/yourusername/streamly", // replace with your real repo
-    image: "/projects/Streamly.webp",
-    tags: [TAGS.Next, TAGS.React, TAGS.Tailwind],
+      "Landing page for a marketplace platform where entrepreneurs can build their e-shops in minutes, and shoppers can explore endless products from sellers in Costa Rica.",
+    link: "https://willowy-gaufre-c50301.netlify.app/", // replace with your real link
+    github: "",
+    image: "/projects/crc_landing.webp",
+    tags: [TAGS.React, TAGS.Tailwind, TAGS.Typescript, TAGS.Gsap],
   },
   {
-    title: "ConnectHub - A social platform for sharing moments",
+    title:
+      "CaVi - Level up your career with AI-driven feedback and job match insights",
     description:
-      "An original social networking app inspired by Facebook. Features include real-time posts, likes, comments, and user profiles. Built with Next.js, Firebase, and Tailwind CSS.",
-    link: "https://x.com", // replace with your real link
-    github: "https://github.com/yourusername/connecthub", // replace with your real repo
-    image: "/projects/ConnectHub.webp",
-    tags: [TAGS.Next, TAGS.Tailwind, TAGS.React],
+      "CaVi is your personal career assistant powered by AI. Upload your CV in seconds and get instant, intelligent feedback to make your resume stand out.",
+    link: "https://reliable-begonia-ce5e2d.netlify.app/", // replace with your real link
+    github: "",
+    image: "/projects/cavi_app.webp",
+    tags: [
+      TAGS.React,
+      TAGS.Tailwind,
+      TAGS.ReactRouter,
+      TAGS.Redux,
+      TAGS.Typescript,
+      TAGS.OpenAi,
+    ],
   },
 ];
 ---
@@ -67,11 +105,11 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2">
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2 `}
                   >
                     <tag.icon class="size-4" />
                     {tag.name}
