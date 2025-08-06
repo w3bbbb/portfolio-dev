@@ -50,7 +50,8 @@ const TAGS = {
   },
   Gsap: {
     name: "GSAP",
-    class: "bg-gradient-to-r from-[#5DD332] to-[#8DEA6A] border border-black dark:border-none text-black font-bold",
+    class:
+      "bg-gradient-to-r from-[#5DD332] to-[#8DEA6A] border border-black dark:border-none text-black font-bold",
     icon: Gsap,
   },
 };
@@ -90,13 +91,19 @@ const PROJECTS = [
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:hover:bg-gray-800/50">
-            <img
-              alt="project image"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-lg sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:hover:bg-gray-800/50">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="project image"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
           </div>
         </div>
 
